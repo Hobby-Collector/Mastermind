@@ -6,6 +6,7 @@ module.exports = {
 };
 
 async function create(req, res) {
+  console.log(req.user);
   try {
     await Score.create(req.body);
     // Use the highScores action to return the list
@@ -16,6 +17,7 @@ async function create(req, res) {
 }
 
 async function highScores(req, res) {
+  console.log(req.user)
   const scores = await Score.find({})
     .sort({numGuesses: 1, seconds: 1})
     // Default to a limit of 20 high scores
