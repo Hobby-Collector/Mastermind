@@ -200,6 +200,7 @@ class App extends Component {
               guesses={this.state.guesses}
               elapsedTime={this.state.elapsedTime}
               isTiming={this.state.isTiming}
+              user={this.state.user}
               handleColorSelection={this.handleColorSelection}
               handleNewGameClick={this.handleNewGameClick}
               handlePegClick={this.handlePegClick}
