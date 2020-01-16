@@ -179,6 +179,11 @@ class App extends Component {
     this.setState({ scores });
   }
 
+  handleLogout = () => {
+    userService.logout();
+    this.setState({user: null});
+  }
+
   /*--- Lifecycle Methods ---*/
 
   async componentDidMount() {
@@ -206,6 +211,7 @@ class App extends Component {
               handlePegClick={this.handlePegClick}
               handleScoreClick={this.handleScoreClick}
               handleTimerUpdate={this.handleTimerUpdate}
+              handleLogout={this.handleLogout}
             />
           }/>
           <Route exact path='/settings' render={props => 
